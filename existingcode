@@ -1,0 +1,52 @@
+package testpackage;
+
+import java.util.Scanner;
+
+public class BankAccount {
+
+	double balance = 0;
+	double wallet = 100;
+	public void getExit() {
+		System.exit(0);
+	}
+	
+	public int getActions() {
+		int counter = 0;
+		return counter;
+	}
+	public static double getBalance() {
+		return balance;
+	}
+	
+	public Object getDeposit() {
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+	    System.out.println("How much are you depositing");
+	    double depositinput = myObj.nextDouble();
+		balance = balance + depositinput;
+		wallet = wallet - depositinput;
+		return depositinput;
+	}
+	public Object getWithdraw() {
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+	    System.out.println("How much are you withdrawing");
+	    double withdrawinput= myObj.nextDouble();
+		balance = balance - withdrawinput;
+		balance = wallet + withdrawinput;
+		return withdrawinput;
+	}
+	public static int getMenu() {
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+	    System.out.println("1. Get Balance \n2. Deposit \n3. Withdraw \n4. Exit");
+	    int selection = myObj.nextInt();
+	    if (selection = 1) {
+	    	getBalance();
+	    }
+	    return selection;
+	    
+	}
+	public static void main(String[] args) {
+		getMenu();
+
+	}
+
+}
